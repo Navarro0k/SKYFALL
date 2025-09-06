@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://db8wj6a0ybwi1"]
+
+[ext_resource type="Texture2D" uid="uid://c2mpkkiddmtkl" path="res://kenney_jumper-pack/PNG/Items/bubble.png" id="1_vn28e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aeuid"]
+radius = 105.437
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vn28e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_aeuid")

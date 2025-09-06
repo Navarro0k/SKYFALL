@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6i8vclwyk1r"]
+
+[ext_resource type="PackedScene" uid="uid://8vblm4xqyqh6" path="res://Bloques/Grass.tscn" id="1_3nu02"]
+[ext_resource type="Script" uid="uid://dmqprtpkblhka" path="res://niveles/camera_2d.gd" id="1_xocxm"]
+[ext_resource type="PackedScene" uid="uid://buwdwnr20y4dl" path="res://Bloques/Grass peq.tscn" id="2_xocxm"]
+[ext_resource type="PackedScene" uid="uid://yf074egodden" path="res://Bloques/Piedra peq.tscn" id="3_tbksf"]
+[ext_resource type="PackedScene" uid="uid://d3pbvn15at7fl" path="res://Bloques/Piedra.tscn" id="4_0asca"]
+[ext_resource type="PackedScene" uid="uid://wvgymqt2nm35" path="res://personaje.tscn" id="5_3k7le"]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("objet_seguir")]
+position = Vector2(164, 501)
+limit_bottom = 800
+position_smoothing_enabled = true
+script = ExtResource("1_xocxm")
+objet_seguir = NodePath("../CharacterBody2D")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_3nu02")]
+position = Vector2(172, 587)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_3nu02")]
+position = Vector2(449, 522)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_xocxm")]
+position = Vector2(254, 376)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_tbksf")]
+position = Vector2(624, 369)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("4_0asca")]
+position = Vector2(778, 588)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("3_tbksf")]
+position = Vector2(806, 270)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("4_0asca")]
+position = Vector2(614, 152)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("2_xocxm")]
+position = Vector2(109, 265)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("2_xocxm")]
+position = Vector2(349, 169)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("2_xocxm")]
+position = Vector2(109, 86)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_3k7le")]
+position = Vector2(171, 505)
