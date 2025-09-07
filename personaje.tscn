@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://wvgymqt2nm35"]
+[gd_scene load_steps=5 format=3 uid="uid://wvgymqt2nm35"]
 
 [ext_resource type="Texture2D" uid="uid://coaqr0d30yxu3" path="res://kenney_jumper-pack/PNG/Players/bunny1_ready.png" id="1_4e5bt"]
 [ext_resource type="Script" uid="uid://bg78ci12kuhbj" path="res://personaje.gd" id="1_ltgau"]
+[ext_resource type="AudioStream" uid="uid://c3t41w6i60l3t" path="res://Sonidos/salto sound.mp3" id="3_yppqc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_imvb3"]
 radius = 29.0
@@ -16,3 +17,7 @@ shape = SubResource("CapsuleShape2D_imvb3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_4e5bt")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yppqc")
+volume_db = -2.011
