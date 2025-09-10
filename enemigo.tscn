@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://4lgxxc3p62js"]
+
+[ext_resource type="Texture2D" uid="uid://cmklyv1c14cf4" path="res://Personaje/Flying Demon 2D Pixel Art/Sprites/with_outline/IDLE.png" id="1_becj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5tj2"]
+atlas = ExtResource("1_becj5")
+region = Rect2(0, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moxti"]
+atlas = ExtResource("1_becj5")
+region = Rect2(81, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnx68"]
+atlas = ExtResource("1_becj5")
+region = Rect2(162, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8qs0"]
+atlas = ExtResource("1_becj5")
+region = Rect2(243, 0, 81, 71)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57rph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5tj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moxti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnx68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8qs0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="DEMONIO" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.25, 1.25)
+scale = Vector2(1.12963, 1.17606)
+sprite_frames = SubResource("SpriteFrames_57rph")
+animation = &"idle"

@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6i8vclwyk1r"]
+[gd_scene load_steps=10 format=3 uid="uid://c6i8vclwyk1r"]
 
 [ext_resource type="PackedScene" uid="uid://8vblm4xqyqh6" path="res://Bloques/Grass.tscn" id="1_3nu02"]
 [ext_resource type="Script" uid="uid://dmqprtpkblhka" path="res://niveles/camera_2d.gd" id="1_xocxm"]
-[ext_resource type="PackedScene" uid="uid://4lgxxc3p62js" path="res://enemigo.tscn" id="2_pwprm"]
 [ext_resource type="PackedScene" uid="uid://buwdwnr20y4dl" path="res://Bloques/Grass peq.tscn" id="2_xocxm"]
 [ext_resource type="PackedScene" uid="uid://yf074egodden" path="res://Bloques/Piedra peq.tscn" id="3_tbksf"]
 [ext_resource type="PackedScene" uid="uid://d3pbvn15at7fl" path="res://Bloques/Piedra.tscn" id="4_0asca"]
@@ -14,23 +13,32 @@
 [node name="Level 1" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("objet_seguir")]
-position = Vector2(161, 505)
+position = Vector2(164, 501)
 limit_bottom = 800
 position_smoothing_enabled = true
 script = ExtResource("1_xocxm")
 objet_seguir = NodePath("../CharacterBody2D")
 
-[node name="DEMONIO" parent="Camera2D" instance=ExtResource("2_pwprm")]
-position = Vector2(500, 0)
-
 [node name="StaticBody2D" parent="." instance=ExtResource("1_3nu02")]
-position = Vector2(132, 567)
+position = Vector2(172, 587)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_xocxm")]
+position = Vector2(323, 432)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("2_xocxm")]
+position = Vector2(123, 334)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("2_xocxm")]
+position = Vector2(361, 228)
 
 [node name="StaticBody2D10" parent="." instance=ExtResource("2_xocxm")]
-position = Vector2(654, 195)
+position = Vector2(154, 83)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_3k7le")]
-position = Vector2(84, 501)
+position = Vector2(171, 505)
+jump_speed = 700
+speed = 400
+max_jumps = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_tbksf")
@@ -39,7 +47,7 @@ autoplay = true
 max_distance = 4096.0
 
 [node name="StaticBody2D11" parent="." instance=ExtResource("2_xocxm")]
-position = Vector2(431, 20)
+position = Vector2(371, -20)
 
 [node name="StaticBody2D16" parent="." instance=ExtResource("2_xocxm")]
 position = Vector2(143, -152)
@@ -98,6 +106,18 @@ position = Vector2(90, -2939)
 [node name="StaticBody2D25" parent="." instance=ExtResource("3_tbksf")]
 position = Vector2(89, -3307)
 
+[node name="StaticBody2D26" parent="." instance=ExtResource("1_3nu02")]
+position = Vector2(-17, 587)
+
+[node name="StaticBody2D27" parent="." instance=ExtResource("1_3nu02")]
+position = Vector2(364, 585)
+
+[node name="StaticBody2D28" parent="." instance=ExtResource("2_xocxm")]
+position = Vector2(-167, 524)
+
+[node name="StaticBody2D29" parent="." instance=ExtResource("2_xocxm")]
+position = Vector2(525, 519)
+
 [node name="StaticBody2D30" parent="." instance=ExtResource("3_tbksf")]
 position = Vector2(834, -511)
 
@@ -145,12 +165,3 @@ position = Vector2(2435, -2386)
 
 [node name="StaticBody2D45" parent="." instance=ExtResource("3_tbksf")]
 position = Vector2(3158, -2378)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("2_xocxm")]
-position = Vector2(504, 340)
-
-[node name="StaticBody2D8" parent="." instance=ExtResource("2_xocxm")]
-position = Vector2(333, 417)
-
-[node name="StaticBody2D9" parent="." instance=ExtResource("2_xocxm")]
-position = Vector2(882, 18)
