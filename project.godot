@@ -15,6 +15,11 @@ run/main_scene="res://niveles/level_1.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=780
+window/size/viewport_height=420
+
 [input]
 
 derecha={
