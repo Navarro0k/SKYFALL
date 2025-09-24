@@ -1,0 +1,121 @@
+[gd_scene load_steps=17 format=3 uid="uid://bcmctjkiex1qq"]
+
+[ext_resource type="Script" uid="uid://6smcs87delkd" path="res://enemyreal.gd" id="1_i8x6s"]
+[ext_resource type="Texture2D" uid="uid://ctdet23qwudnl" path="res://Personaje/Flying Demon 2D Pixel Art/Sprites/without_outline/IDLE.png" id="1_v6nhy"]
+[ext_resource type="Texture2D" uid="uid://dxaephu2ytxe8" path="res://Personaje/Flying Demon 2D Pixel Art/Sprites/without_outline/ATTACK.png" id="2_i8x6s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6nhy"]
+atlas = ExtResource("2_i8x6s")
+region = Rect2(0, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8x6s"]
+atlas = ExtResource("2_i8x6s")
+region = Rect2(79, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n73i"]
+atlas = ExtResource("2_i8x6s")
+region = Rect2(158, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wth6m"]
+atlas = ExtResource("2_i8x6s")
+region = Rect2(237, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjuk4"]
+atlas = ExtResource("2_i8x6s")
+region = Rect2(316, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qryju"]
+atlas = ExtResource("2_i8x6s")
+region = Rect2(395, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1lfy"]
+atlas = ExtResource("2_i8x6s")
+region = Rect2(474, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq1fi"]
+atlas = ExtResource("2_i8x6s")
+region = Rect2(553, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63ff3"]
+atlas = ExtResource("1_v6nhy")
+region = Rect2(0, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjg3i"]
+atlas = ExtResource("1_v6nhy")
+region = Rect2(79, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0vbw"]
+atlas = ExtResource("1_v6nhy")
+region = Rect2(158, 0, 79, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb4ch"]
+atlas = ExtResource("1_v6nhy")
+region = Rect2(237, 0, 79, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wth6m"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6nhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8x6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n73i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wth6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjuk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qryju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1lfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq1fi")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63ff3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjg3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0vbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mb4ch")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Enemyreal" type="Node2D"]
+script = ExtResource("1_i8x6s")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 1.213
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -2)
+scale = Vector2(0.288766, 0.746377)
+sprite_frames = SubResource("SpriteFrames_wth6m")
+animation = &"Idle"
+frame_progress = 0.235747
+speed_scale = 1.455

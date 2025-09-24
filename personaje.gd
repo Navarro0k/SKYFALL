@@ -52,3 +52,7 @@ func jump(delta):
 		velocity.y = -jump_speed
 		jumps_done += 1
 		jump_sound.play()
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.
