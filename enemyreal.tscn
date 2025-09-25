@@ -103,9 +103,11 @@ animations = [{
 }]
 
 [node name="Enemyreal" type="Node2D"]
+scale = Vector2(1.37492, 1.02003)
 script = ExtResource("1_i8x6s")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1.05768, 1)
 
 [node name="FireTimer" type="Timer" parent="."]
 wait_time = 1.213
@@ -113,9 +115,10 @@ wait_time = 1.213
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -2)
-scale = Vector2(0.288766, 0.746377)
+position = Vector2(5, -4)
+scale = Vector2(0.600079, 0.746377)
 sprite_frames = SubResource("SpriteFrames_wth6m")
-animation = &"Idle"
-frame_progress = 0.235747
+animation = &"Attack"
+frame = 6
+frame_progress = 0.00202797
 speed_scale = 1.455

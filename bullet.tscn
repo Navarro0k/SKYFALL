@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpa6on4k6ist4"]
 
-[ext_resource type="Texture2D" uid="uid://coxdk64nuli1q" path="res://197381156-destello-de-pistola-naranja-con-fuego-efecto-explosivo-o-rastro-de-bala-animación-de-disparo-en-la-removebg-preview.png" id="1_v7oki"]
+[ext_resource type="Texture2D" uid="uid://coxdk64nuli1q" path="res://197381156-destello-de-pistola-naranja-con-fuego-efecto-explosivo-o-rastro-de-bala-animaci├│n-de-disparo-en-la-removebg-preview.png" id="1_v7oki"]
 [ext_resource type="Script" uid="uid://c2n0ym8mcv22c" path="res://bullet.gd" id="1_v8qja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qja"]
