@@ -9,6 +9,28 @@ extends CharacterBody2D
 @onready var animated_sprite = $"sprite animado"
 var jumps_done: int = 0     # cuántos saltos llevamos
 var is_facing_right =true
+@export var max_vida: int = 3
+var vida: int
+
+
+func _ready() -> void:
+	add_to_group("player")
+	vida = max_vida
+	# si ya tienes un _ready o inicializaciones, agrega la línea vida = max_vida ahí
+
+func take_damage(amount: int) -> void:
+	vida -= amount
+	# puedes hacer una animación, reproducir sonido, etc. aquí
+	$"sprite animado".modulate = Color(1,0.5,0.5) # ejemplo: tint temporal (opcional)
+	await get_tree().create_timer(0.15).timeout
+	$"sprite animado".modulate = Color(1,1,1)
+	
+	if vida <= 0:
+		die()
+
+func die() -> void:
+	# lo que quieras al morir (desaparecer, reiniciar nivel, reproducir anim)
+	queue_free()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
