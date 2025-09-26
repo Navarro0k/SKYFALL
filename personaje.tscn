@@ -127,7 +127,6 @@ size = Vector2(78, 78)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_mask = 7
 script = ExtResource("1_ltgau")
-max_vida = 2
 
 [node name="sprite animado" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, -39)

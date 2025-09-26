@@ -7,6 +7,9 @@ extends CharacterBody2D
 @export var spawn_offset: float = 32.0
 @export var aim_to_target: bool = true
 @export var facing_right: bool = true
+@onready var sonido_disparo: AudioStreamPlayer2D = $"Sonido Disparo"
+
+
 
 var is_attacking: bool = false
 var shoot_timer: float = 0.0
@@ -46,6 +49,10 @@ func update_animations():
 func shoot():
 	is_attacking = true
 
+	# 🔊 Reproducir sonido de disparo
+	if sonido_disparo:
+		sonido_disparo.play()
+
 	if shoot_pattern == "hacia_objetivo" and aim_to_target and target:
 		var target_pos = target.global_position
 		var dir = (target_pos - global_position).normalized()
@@ -65,8 +72,10 @@ func shoot():
 				_spawn_bullet((base_dir + Vector2(0, 0.3)).normalized())
 			"hacia_objetivo":
 				_spawn_bullet(get_facing_direction())
-
 	animated_sprite.play("Attack")
+	if sonido_disparo:
+		sonido_disparo.play()
+
 
 func _spawn_bullet(direction: Vector2):
 	if direction.length() == 0:

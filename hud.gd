@@ -2,11 +2,16 @@ extends CanvasLayer
 
 var tiempo: float = 0.0
 
+@onready var vida_label: Label = $VBoxContainer/Label2
+@onready var cronometro_label: Label = $VBoxContainer/Label
+
 func _process(delta: float) -> void:
 	tiempo += delta
 	
 	var minutos = int(tiempo) / 60
 	var segundos = int(tiempo) % 60
 	
-	# %02d asegura que los segundos siempre tengan 2 dígitos (ej: 1:05, 2:09)
-	$Label.text = str(minutos) + ":" + str("%02d" % segundos)
+	cronometro_label.text = str(minutos) + ":" + str("%02d" % segundos)
+
+func update_vida(actual: int, max: int) -> void:
+	vida_label.text = "Vida: %d / %d" % [actual, max]
